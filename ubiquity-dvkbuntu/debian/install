@@ -1,12 +1,1 @@
 ubiquity-dm usr/bin/
-
-ubi-console-setup.py usr/lib/ubiquity/plugins/
-ubi-language.py usr/lib/ubiquity/plugins/
-ubi-network.py usr/lib/ubiquity/plugins/
-ubi-partman.py usr/lib/ubiquity/plugins/
-ubi-prepare.py usr/lib/ubiquity/plugins/
-ubi-tasks.py usr/lib/ubiquity/plugins/
-ubi-timezone.py usr/lib/ubiquity/plugins/
-ubi-timezone.py usr/lib/ubiquity/plugins/ubi-usersetup.py
-ubi-wireless.py usr/lib/ubiquity/plugins/
-

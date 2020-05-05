@@ -15,8 +15,6 @@ import sysconfig
 import traceback
 import time
 
-from pygame import mixer
-
 import debconf
 import PAM
 
@@ -28,8 +26,6 @@ from ubiquity.debconfcommunicator import DebconfCommunicator
 import ubiquity.frontend
 from ubiquity.misc import create_bool, utf8
 
-mixer.init(16050)
-pathSonWave = os.environ['HOME'] + '/.local/share/dvkbuntu/sonEnCours.wav'
 
 logfile = None
 
@@ -789,13 +785,8 @@ EndSection
                 elif self.frontend == 'kde_ui':
                     cmd = ['kdialog', '--title=%s' % title,
                            '--msgbox=%s' % message]
+                    subprocess.call(['/usr/bin/createWaveFromItem', title, message])
                     subprocess.call(cmd)
-                    
-                    subprocess.call(['/usr/bin/createWaveFromItem', title + ' ' + message])
-                    Son = mixer.Sound(pathSonWave)
-                    Son.play(0)
-                    
-                    time.sleep(5)
                 else:
                     # Not ideal, but if we cannot let the user know what's
                     # going on, it's best to drop them into a desktop and let
